@@ -1,6 +1,6 @@
 import { Router } from 'express'
 import { decodeUserFromToken, checkAuth } from '../middleware/auth.js'
-import * as profilesCtrl from '../controllers/profiles.js'
+import * as customerCtrl from '../controllers/customers.js'
 
 const router = Router()
 
@@ -9,7 +9,7 @@ const router = Router()
 
 /*---------- Protected Routes ----------*/
 router.use(decodeUserFromToken)
-router.get('/', checkAuth, profilesCtrl.index)
-
+router.get('/', checkAuth, customerCtrl.index)
+router.post('/create', checkAuth, customerCtrl.create)
 
 export { router }
