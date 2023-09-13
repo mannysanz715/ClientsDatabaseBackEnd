@@ -75,7 +75,7 @@ function handleAuthError(err, res) {
 }
 
 function createJWT(user) {
-  return jwt.sign({ user }, process.env.SECRET, { expiresIn: '24h' })
+  return jwt.sign({ user }, process.env.SECRET)
 }
 
 export { signup, login, changePassword }
