@@ -10,6 +10,7 @@ const router = Router()
 /*---------- Protected Routes ----------*/
 router.use(decodeUserFromToken)
 router.get('/', checkAuth, customerCtrl.index)
+router.get('/:id', checkAuth, customerCtrl.details)
 router.post('/create', checkAuth, customerCtrl.create)
 
 export { router }

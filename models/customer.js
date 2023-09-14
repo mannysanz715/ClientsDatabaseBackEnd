@@ -7,6 +7,9 @@ const customerSchema = new Schema({
   phoneNumber: String,
   address: String,
   permitNumber: String,
+  dateOfBirth : String,
+  certificate : String,
+  instructor : String,
 },{
   timestamps: true,
 })

@@ -10,6 +10,15 @@ async function index(req, res) {
     res.status(500).json(err)
   }
 }
+async function details(req, res) {
+  try {
+    const customers = await Customer.findById(req.params.id)
+    res.json(customers)
+  } catch (err) {
+    console.log(err)
+    res.status(500).json(err)
+  }
+}
 
 async function create(req, res) {
   try{
@@ -21,4 +30,4 @@ async function create(req, res) {
   }
 }
 
-export { index, create }
+export { index, create, details }
